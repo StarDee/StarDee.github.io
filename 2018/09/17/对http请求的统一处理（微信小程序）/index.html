@@ -111,25 +111,25 @@
     })();
 </script>
 
-  <meta name="description" content="配置环境下载JDK，配置环境android SDK：安卓开发者网站（需要翻墙），有单独的Android SDK压缩包下载，也可以装Android Studio （ 我安装的是2.3版本，使用遇到了一个问题，提示我在SDK目录下的tools文件夹缺少一个文件，我是在网上找了一个原来版本的tools文件夹替换了原来的）">
-<meta name="keywords" content="Ionic">
+  <meta name="description" content="微信小程序通过wx.request()发起网络请求，在我们实际使用时我们可能需要在请求头中加入token等信息，也可能需要对报错信息进行提示，对于每次请求这些工作可能都是重复的，我们需要统一的处理，像其他前端框架那样。">
+<meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ionic安装和配置">
-<meta property="og:url" content="https://blog.stardee.cn/2017/03/16/ionic安装和配置/index.html">
+<meta property="og:title" content="对网络请求的统一处理（微信小程序）">
+<meta property="og:url" content="https://blog.stardee.cn/2018/09/17/对http请求的统一处理（微信小程序）/index.html">
 <meta property="og:site_name" content="StarDee">
-<meta property="og:description" content="配置环境下载JDK，配置环境android SDK：安卓开发者网站（需要翻墙），有单独的Android SDK压缩包下载，也可以装Android Studio （ 我安装的是2.3版本，使用遇到了一个问题，提示我在SDK目录下的tools文件夹缺少一个文件，我是在网上找了一个原来版本的tools文件夹替换了原来的）">
+<meta property="og:description" content="微信小程序通过wx.request()发起网络请求，在我们实际使用时我们可能需要在请求头中加入token等信息，也可能需要对报错信息进行提示，对于每次请求这些工作可能都是重复的，我们需要统一的处理，像其他前端框架那样。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-14T14:06:28.320Z">
+<meta property="og:updated_time" content="2019-03-29T06:17:03.814Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ionic安装和配置">
-<meta name="twitter:description" content="配置环境下载JDK，配置环境android SDK：安卓开发者网站（需要翻墙），有单独的Android SDK压缩包下载，也可以装Android Studio （ 我安装的是2.3版本，使用遇到了一个问题，提示我在SDK目录下的tools文件夹缺少一个文件，我是在网上找了一个原来版本的tools文件夹替换了原来的）">
+<meta name="twitter:title" content="对网络请求的统一处理（微信小程序）">
+<meta name="twitter:description" content="微信小程序通过wx.request()发起网络请求，在我们实际使用时我们可能需要在请求头中加入token等信息，也可能需要对报错信息进行提示，对于每次请求这些工作可能都是重复的，我们需要统一的处理，像其他前端框架那样。">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.stardee.cn/2017/03/16/ionic安装和配置/">
+  <link rel="canonical" href="https://blog.stardee.cn/2018/09/17/对http请求的统一处理（微信小程序）/">
 
 
 
@@ -139,7 +139,7 @@
   };
 </script>
 
-  <title>ionic安装和配置 | StarDee</title>
+  <title>对网络请求的统一处理（微信小程序） | StarDee</title>
   
 
 
@@ -360,7 +360,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.stardee.cn/2017/03/16/ionic安装和配置/">
+    <link itemprop="mainEntityOfPage" href="https://blog.stardee.cn/2018/09/17/对http请求的统一处理（微信小程序）/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="StarDee">
@@ -377,7 +377,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">ionic安装和配置
+          <h2 class="post-title" itemprop="name headline">对网络请求的统一处理（微信小程序）
 
               
             
@@ -403,7 +403,7 @@
                 
               
 
-              <time title="创建时间：2017-03-16 22:49:18" itemprop="dateCreated datePublished" datetime="2017-03-16T22:49:18+08:00">2017-03-16</time>
+              <time title="创建时间：2018-09-17 19:07:56" itemprop="dateCreated datePublished" datetime="2018-09-17T19:07:56+08:00">2018-09-17</time>
             
 
             
@@ -420,7 +420,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-14 22:06:28" itemprop="dateModified" datetime="2019-03-14T22:06:28+08:00">2019-03-14</time>
+                <time title="修改时间：2019-03-29 14:17:03" itemprop="dateModified" datetime="2019-03-29T14:17:03+08:00">2019-03-29</time>
               
             
           </span>
@@ -461,30 +461,8 @@
       
 
       
-        <h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="下载JDK，配置环境"><a href="#下载JDK，配置环境" class="headerlink" title="下载JDK，配置环境"></a>下载JDK，配置环境</h3><p>android SDK：<a href="https://developer.android.com/studio/index.html" target="_blank" rel="noopener">安卓开发者网站</a>（需要翻墙），有单独的Android SDK压缩包下载，也可以装Android Studio</p>
-<p>（ 我安装的是2.3版本，使用遇到了一个问题，提示我在SDK目录下的tools文件夹缺少一个文件，我是在网上找了一个原来版本的tools文件夹替换了原来的）</p>
-<a id="more"></a>
-<h2 id="项目自动构建与启动"><a href="#项目自动构建与启动" class="headerlink" title="项目自动构建与启动"></a>项目自动构建与启动</h2><ol>
-<li><p>先安装node.js</p>
-</li>
-<li><p>安装cordova ionic</p>
-<pre><code>npm install -g cordova ionic
-</code></pre></li>
-<li><p>创建运行项目</p>
-</li>
-</ol>
-<h2 id="IOS创建运行项目"><a href="#IOS创建运行项目" class="headerlink" title="IOS创建运行项目"></a>IOS创建运行项目</h2><pre><code>ionic start myproject
-cd myproject
-ionic platform add ios
-ionic build ios
-ionic emulate ios
-</code></pre><h2 id="android创建安装运行"><a href="#android创建安装运行" class="headerlink" title="android创建安装运行"></a>android创建安装运行</h2><pre><code>ionic start myproject或者ionic start myproject --skip-npm+npm install --save
-cd myproject
-ionic platform add android
-ionic build android
-ionic emulate android（模拟器运行）
-ionic run android （连接上手机运行）
-</code></pre>
+        <p>微信小程序通过<em>wx.request()</em>发起网络请求，在我们实际使用时我们可能需要在请求头中加入token等信息，也可能需要对报错信息进行提示，对于每次请求这些工作可能都是重复的，我们需要统一的处理，像其他前端框架那样。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">// 这是域名  </span><br><span class="line">let verifyCount = [];</span><br><span class="line">let requestCount = [];</span><br><span class="line">const app = getApp();</span><br><span class="line">export const API_URI = &apos;https://xxx.xxxxxx.cn&apos;</span><br><span class="line">/**</span><br><span class="line"> * 接口公共访问方法</span><br><span class="line"> * @param &#123;Object&#125; urlPath 访问路径</span><br><span class="line"> * @param &#123;Object&#125; requestParams 访问参数（json格式）</span><br><span class="line"> * @param &#123;Object&#125; requestCode 访问码，返回处理使用</span><br><span class="line"> * @param &#123;Object&#125; onSuccess 成功回调</span><br><span class="line"> * @param &#123;Object&#125; onErrorBefore 失败回调</span><br><span class="line"> * @param &#123;Object&#125; onComplete 请求完成（不管成功或失败）回调</span><br><span class="line"> * @param &#123;Object&#125; isVerify 是否验证重复提交</span><br><span class="line"> * @param &#123;Object&#125; requestType 请求类型（默认POST）</span><br><span class="line"> * @param &#123;Object&#125; retry 访问失败重新请求次数（默认1次）</span><br><span class="line"> */</span><br><span class="line">const webRequest = (req) =&gt; &#123;</span><br><span class="line">  let requestType = req.requestType ? req.requestType : &quot;POST&quot;;</span><br><span class="line">  let urlPath = req.urlPath;  </span><br><span class="line">  let params = req.params ? req.params : &#123;&#125;;</span><br><span class="line">  let requestCode = req.requestCode ? req.requestCode : 1;</span><br><span class="line">  let onSuccess = req.onSuccess ? req.onSuccess : function() &#123;&#125;;</span><br><span class="line">  let onErrorBefore = req.onErrorBefore ? req.onErrorBefore : function () &#123; &#125;;</span><br><span class="line">  let onComplete = req.onComplete ? req.onComplete : function () &#123; &#125;;</span><br><span class="line">  let isVerify = req.isVerify ? req.isVerify : false;</span><br><span class="line">  let retry = req.retry ? req.retry : 1;</span><br><span class="line">  let that = this;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">  //防止重复提交，相同请求间隔时间不能小于500毫秒</span><br><span class="line">  let nowTime = new Date().getTime();</span><br><span class="line">  if (requestCount[urlPath] &amp;&amp; (nowTime - requestCount[urlPath]) &lt; 500) &#123;</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line">  requestCount[urlPath] = nowTime;</span><br><span class="line">  //是否验证重复提交</span><br><span class="line">  if (isVerify) &#123;</span><br><span class="line">    if (verifyCount[urlPath]) &#123;</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line">    verifyCount[urlPath] = true; //重复验证开关开启</span><br><span class="line">  &#125;</span><br><span class="line">  let loading = setTimeout(() =&gt; &#123;</span><br><span class="line">    wx.showLoading(&#123;</span><br><span class="line">      title: &apos;请稍候&apos;,</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;, 500)</span><br><span class="line">  console.log(&quot;发起网络请求, 路径:&quot; + (API_URI + urlPath) + &quot;, 参数:&quot; + JSON.stringify(params));</span><br><span class="line"> </span><br><span class="line">  wx.request(&#123;</span><br><span class="line">    url: API_URI + urlPath,</span><br><span class="line">    data: params,</span><br><span class="line">    method: requestType, // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT</span><br><span class="line">    header: &#123;</span><br><span class="line">      &apos;content-type&apos;: &apos;application/json&apos;,</span><br><span class="line">      &apos;Authorization&apos;: &apos;Bearer &apos; + app.globalData.tokenInfo.token,</span><br><span class="line">      // requestType == &apos;POST&apos; ? &apos;application/x-www-form-urlencoded&apos; : &apos;application/json&apos;</span><br><span class="line">    &#125;, // 设置请求的 header</span><br><span class="line">    success: res =&gt; &#123;</span><br><span class="line">      // console.log(&quot;返回结果：&quot; + JSON.stringify(res.data));</span><br><span class="line">      if (res.data) &#123;</span><br><span class="line">        if (res.data.success == true) &#123; //访问成功error.message</span><br><span class="line">          onSuccess(res.data.result, requestCode);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          onErrorBefore(!res.data.error||res.data.error.message == null ? &quot;请求失败 , 请重试&quot; : res.data.error.message,res.statusCode);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        onErrorBefore(&quot;请求失败 , 请重试&quot;, res.statusCode);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    fail: res =&gt; &#123;</span><br><span class="line">      retry--;</span><br><span class="line">      console.log(&quot;网络访问失败：&quot; + JSON.stringify(res));</span><br><span class="line">      onErrorBefore(&quot;网络访问失败,请检查网络&quot;)</span><br><span class="line">      if (retry &gt; 0) return webRequest(req);</span><br><span class="line">    &#125;,</span><br><span class="line">    complete: res =&gt; &#123;</span><br><span class="line">      onComplete(requestCode);</span><br><span class="line">      wx.hideLoading();</span><br><span class="line">      clearTimeout(loading);</span><br><span class="line">      //请求完成后，1秒后重复验证的开关关闭</span><br><span class="line">      if (isVerify) &#123;</span><br><span class="line">        setTimeout(function() &#123;</span><br><span class="line">          verifyCount[urlPath] = false;</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  webRequest: webRequest</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -507,7 +485,7 @@ ionic run android （连接上手机运行）
       
         <div class="post-tags">
           
-            <a href="/tags/Ionic/" rel="tag"><i class="fa fa-tag"></i> Ionic</a>
+            <a href="/tags/小程序/" rel="tag"><i class="fa fa-tag"></i> 小程序</a>
           
         </div>
       
@@ -520,8 +498,8 @@ ionic run android （连接上手机运行）
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/07/vue通过js中引入本地图片/" rel="next" title="vue通过js中引入本地图片">
-                <i class="fa fa-chevron-left"></i> vue通过js中引入本地图片
+              <a href="/2018/09/03/ng-events类似ionic中Events的angualr全局事件/" rel="next" title="ng-events类似ionic中Events的angualr全局事件">
+                <i class="fa fa-chevron-left"></i> ng-events类似ionic中Events的angualr全局事件
               </a>
             
           </div>
@@ -530,8 +508,8 @@ ionic run android （连接上手机运行）
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/17/ionic应用图标启动画修改/" rel="prev" title="ionic应用图标启动画修改">
-                ionic应用图标启动画修改 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/12/自定义click/" rel="prev" title="angular/ionic自定义click">
+                angular/ionic自定义click <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -581,17 +559,8 @@ ionic run android （连接上手机运行）
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -689,23 +658,6 @@ ionic run android （连接上手机运行）
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境"><span class="nav-number">1.</span> <span class="nav-text">配置环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载JDK，配置环境"><span class="nav-number">1.1.</span> <span class="nav-text">下载JDK，配置环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目自动构建与启动"><span class="nav-number">2.</span> <span class="nav-text">项目自动构建与启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IOS创建运行项目"><span class="nav-number">3.</span> <span class="nav-text">IOS创建运行项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android创建安装运行"><span class="nav-number">4.</span> <span class="nav-text">android创建安装运行</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
